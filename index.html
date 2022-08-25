@@ -13,24 +13,25 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
     <style>
-    #map { 
-        height: 400px;
-        background-color: #ccc;
-    }
-    #map::before{
-        content: 'LOADING';
-        font-size: 3em;
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        margin-top: 3em;
-    }
-    .leaflet-popup-content-wrapper {
-        width: 100%;
-    }
+        #map {   /* Set properties for map object */
+            height: 400px;
+            background-color: #ccc;
+        }
+        #map::before {
+            content: 'LOADING';
+            font-size: 3em;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            margin-top: 3em;
+        }
+        .leaflet-popup-content-wrapper {
+            width: 100%;
+        }
   </style>
 </head>
 <body>
+    <!-- Part I-3. Add a dropdown select element for coffee, restaurant, hotel, and market and button to submit -->
     <form>
         <select id="business">
             <option value="restaurant">Restaurants</option>
@@ -40,6 +41,7 @@
         </select>
         <button id="submit">Submit</button>
     </form>
+    <!-- Part I-3. Add <div> element to display map  -->
     <div id="map"></div>
 </body>
 </html>
