@@ -11,14 +11,14 @@ const myMap = {
 		// this = myMap object
 		this.map = L.map('map', {  // Per Usage example at https://leafletjs.com/reference-1.7.1.html#map-factory
 			center: this.coordinates,
-			zoom: 8,
+			zoom: 11,
 		});
 
 		// Add OpenStreetMap tiles:
 		// Per Usage example at https://leafletjs.com/reference-1.7.1.html#tilelayer
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			minZoom: '12',
+			minZoom: '15',
 		}).addTo(this.map)
 
 		// Add geolocation marker:
@@ -56,23 +56,8 @@ async function getCoords() {
 
 
 // Get Foursquare businesses:
-// API Key: fsq3RMAC4R0VQaW0WlLCXNVPQctaq2GzzdWBi/29vED9GW0=
-/* Commented out, after checking hardcoded coordinates, business type and limit used to verify correct results.
-const options = {
-		method: 'GET',
-		headers: {
-	  		Accept: 'application/json',
-	  		Authorization: 'fsq3RMAC4R0VQaW0WlLCXNVPQctaq2GzzdWBi/29vED9GW0='
-		}
-	};
-fetch('https://cors-anywhere.herokuapp.com/https://api.foursquare.com/v3/places/search?query=restaurant&ll=35.898565%2C-78.800605&limit=5', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-  	.catch(err => console.error(err));
-*/
-
-// Used above code as in function to access business results
-async function getFoursquare(business) {  // incorporated code from Foursquare into getFoursquare function to return business results
+// Used code from Foursquare into getFoursquare function to return business results
+async function getFoursquare(business) {
 	const options = {  // code pulled from Foursquare documentation at https://developer.foursquare.com/reference/place-search
 		method: 'GET',
 		headers: {
