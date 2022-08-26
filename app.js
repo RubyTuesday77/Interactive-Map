@@ -11,14 +11,14 @@ const myMap = {
 		// this = myMap object
 		this.map = L.map('map', {  // Per Usage example at https://leafletjs.com/reference-1.7.1.html#map-factory
 			center: this.coordinates,
-			zoom: 2,
+			zoom: 8,
 		});
 
 		// Add OpenStreetMap tiles:
 		// Per Usage example at https://leafletjs.com/reference-1.7.1.html#tilelayer
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			minZoom: '5',
+			minZoom: '12',
 		}).addTo(this.map)
 
 		// Add geolocation marker:
